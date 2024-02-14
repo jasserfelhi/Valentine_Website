@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jasser Felhi">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: aliceblue;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #imgContainer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
+            width: 80%;
+        }
+        img {
+            width: 250px;
+            height: 300px;
+            object-fit: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        h3 {
+            font-style: oblique;
+            font-size: 30px;
+            color: rgb(255, 0, 221);
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-size: 18px;
+            border: 2px solid rgb(255, 0, 132);
+            background-color: aliceblue;
+            color: black;
+            cursor: pointer;
+            outline: none;
+        }
+        #bt1 {
+            font-family: Arial, sans-serif;
+            background-color: #ffcccc;
+        }
+        #bt2 {
+            font-family: Verdana, Geneva, sans-serif;
+            background-color: #ccffff;
+        }
+        #img2, #img3 {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="imgContainer">
+        <img id="img3" src="https://th.bing.com/th?id=OIP.F0-GejW3DlNxTfINzp_yyQHaJQ&w=223&h=279&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Image 3">
+        <img id="img1" src="https://th.bing.com/th/id/OIP.hi2gR1YVkjVR5EYx1NtQEgHaHk?w=178&h=182&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Image 1">
+        <img id="img2" src="https://th.bing.com/th?id=OIP.o3AyxucbfmQffEp-YtEwswHaGu&w=262&h=238&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="Image 2">
+    </div>
+
+    <h3>Would You Date Me?</h3>
+
+    <div>
+        <button id="bt1" class="button" onclick="showImage('img1'); document.getElementById('bt2').style.fontSize = '18px'; document.getElementById('bt2').style.padding = '10px 20px'; this.style.fontSize = '24px'; this.style.padding = '15px 25px';">YES</button>
+        <button id="bt2" class="button" onclick="showImage('img2'); this.style.fontSize = parseInt(window.getComputedStyle(document.getElementById('bt2')).fontSize) - 5 + 'px'; this.style.padding = '5px 15px'; document.getElementById('bt1').style.fontSize = '18px'; document.getElementById('bt1').style.padding = '10px 20px';">NO</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("imgContainer").style.display = "flex";
+            document.getElementById("img1").style.display = "none";
+            document.getElementById("img2").style.display = "none";
+            document.getElementById("img3").style.display = "inline-block";
+        });
+
+        function showImage(imageId) {
+            if (imageId === 'img1') {
+                document.getElementById("img1").style.display = "inline-block";
+                document.getElementById("img2").style.display = "none";
+                document.getElementById("img3").style.display = "none";
+            } else if (imageId === 'img2') {
+                document.getElementById("img1").style.display = "none";
+                document.getElementById("img2").style.display = "inline-block";
+                document.getElementById("img3").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
